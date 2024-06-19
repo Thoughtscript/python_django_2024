@@ -5,7 +5,12 @@ RUN mkdir /app
 WORKDIR /app
 COPY . .
 
-RUN apt-get install apache2
+RUN apt-get update
+RUN apt-get autoremove -y 
+RUN apt-get autoclean -y
+RUN apt-get upgrade
+
+RUN apt-get install apache2 apache2-dev apache2-doc apache2-utils -y
 # update pip globally within the container
 RUN python3 -m pip install --upgrade pip
 # download dependencies to the image and container
