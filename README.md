@@ -19,3 +19,4 @@ python3 manage.py runserver
 ## Resources and Links
 
 1. https://docs.djangoproject.com/en/5.0/intro/tutorial01/
+2. 

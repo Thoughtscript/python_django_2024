@@ -10,10 +10,10 @@ RUN apt-get autoremove -y
 RUN apt-get autoclean -y
 RUN apt-get upgrade
 
-RUN apt-get install apache2 apache2-dev apache2-doc apache2-utils -y
+RUN apt-get install apache2 apache2-dev apache2-doc apache2-utils libmariadb3 -y
 # update pip globally within the container
 RUN python3 -m pip install --upgrade pip
 # download dependencies to the image and container
 RUN python3 -m pip install -r requirements.txt
 
-CMD [ "python", "manage.py", "runserver"]
+CMD [ "bash", "run.sh" ]
