@@ -2,6 +2,12 @@
 
 [![](https://img.shields.io/badge/Python-3.12.3-yellow.svg)](https://www.python.org/downloads/) [![](https://img.shields.io/badge/Docker-blue.svg)](https://www.docker.com/) [![](https://img.shields.io/badge/Bitnami-MySQL-red.svg)](https://hub.docker.com/r/bitnami/mysql) [![](https://img.shields.io/badge/Django-5.0.6-green.svg)](https://www.djangoproject.com/) 
 
+Revisiting Django in 2024.
+
+Primarily looking at configuration.
+
+> Forewarning: obviously don't use this in Production!
+
 ## Use
 
 ```bash
