@@ -30,7 +30,7 @@ Most people seem to move **Application Configuration** into it's own **Module** 
 
 A lot of examples use PyMySQL but [this article](https://adamj.eu/tech/2020/02/04/how-to-use-pymysql-with-django/) gives great reasons why one should avoid that and just use the out of the box connector and drivers (e.g. - `mysqlclient`).
 
-I got the above to work using fairly paradigmatic config:
+The above works using fairly paradigmatic config:
 
 ```python
 DATABASES = {
@@ -45,7 +45,7 @@ DATABASES = {
 }
 ```
 
-I think a lot of folks encounter timing issues especially when dealing with Dockerized Containers:
+A lot of folks encounter timing issues especially when dealing with Dockerized Containers:
 
 ```bash
 #!/usr/bin/env bash
@@ -59,7 +59,7 @@ sleep 15 && python3 manage.py makemigrations && python3 manage.py migrate && pyt
 wait
 ```
 
-Django will spin immediately and attempt `migrate` and the success of those `migrations` determines whether the app will serve. 
+Django will spin up immediately and attempt to `migrate` - the success of those `migrations` determines whether the app will actually serve. 
 
 > The easiest and least janky way I've seen to address that is to fork the Bash process and impose timer within the script that way the Container can spin up and initialization before it executes any `migration`. That has many advantages over using like Docker `health_checks` (awkward command-based `test` field, timing, and so on).
 
