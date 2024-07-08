@@ -16,7 +16,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from .views import index, all_sub_examples, all_examples, post_example
+from django.views import debug
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('', debug.default_urlconf), # Default Django view preserved
+
+    # http://localhost:8000/test
+    ## Don't include slash as in /test -> test
+    path('test', index, name='index'),
+
+    path('api/subexamples', all_sub_examples),
+
+    path('api/examples', all_examples),
+
+    path('api/examples/create', post_example),
 ]
