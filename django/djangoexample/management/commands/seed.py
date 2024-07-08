@@ -39,4 +39,4 @@ class Command(BaseCommand):
         sub_example_three.example = example_three
         sub_example_three.save()
 
-        self.stdout.write('Completed!')
+        self.stdout.write('Seeding Complete!')

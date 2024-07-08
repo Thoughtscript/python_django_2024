@@ -4,7 +4,7 @@
 
 Revisiting Django in 2024.
 
-Primarily looking at configuration.
+Primarily looking at configuration. (Esp. newerish support for async workers.)
 
 > Forewarning: obviously don't use this in Production!
 
@@ -130,6 +130,12 @@ But `ForeignKey.to` requires a `str` per: https://docs.djangoproject.com/en/5.0/
 1. `http://localhost:8000/api/examples`
 1. `http://localhost:8000/api/subexamples`
 
+Also test minimum viable `POST` Request:
+
+```bash
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X POST "http://localhost:8000/api/examples/create" -d '{"name": "example"}' --insecure
+```
+
 ## Resources and Links
 
 1. https://docs.djangoproject.com/en/5.0/intro/tutorial01/
@@ -140,3 +146,5 @@ But `ForeignKey.to` requires a `str` per: https://docs.djangoproject.com/en/5.0/
 6. https://stackoverflow.com/questions/2428092/creating-a-json-response-using-django-and-python
 7. https://docs.djangoproject.com/en/2.0/howto/custom-management-commands/
 8. https://stackoverflow.com/questions/51577441/how-to-seed-django-project-insert-a-bunch-of-data-into-the-project-for-initi
+9. https://dev.to/pragativerma18/unlocking-performance-a-guide-to-async-support-in-django-2jdj
+10. https://www.uvicorn.org/settings/#application
