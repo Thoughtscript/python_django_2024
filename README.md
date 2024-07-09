@@ -10,14 +10,6 @@ Primarily looking at configuration. (Esp. newerish support for async workers.)
 
 ## Use
 
-```bash
-docker-compose up
-```
-
-> When's all done you should see the default Django view: http://127.0.0.1:8000/
-
-## Discussion
-
 Initialization:
 
 ```bash
@@ -27,7 +19,23 @@ python3 -m pip install Django
 django-admin startproject djangoexample
 ```
 
+Launch:
+
+```bash
+docker-compose up
+```
+
+> When's all done you should see the default Django view: http://127.0.0.1:8000/
+
+## Discussion
+
+Some key topics.
+
+### Config Conventions
+
 Most people seem to move **Application Configuration** into it's own **Module** [like so](./django/djangoexample/config/).
+
+### MySQL Connectors
 
 A lot of examples use PyMySQL but [this article](https://adamj.eu/tech/2020/02/04/how-to-use-pymysql-with-django/) gives great reasons why one should avoid that and just use the out of the box connector and drivers (e.g. - `mysqlclient`).
 
@@ -45,6 +53,8 @@ DATABASES = {
     }
 }
 ```
+
+### Docker Timing Issues
 
 A lot of folks encounter timing issues especially when dealing with Dockerized Containers:
 
@@ -107,7 +117,7 @@ Also, make sure to bind the Database and server correctly:
 * [Here - `settings.py`](django/djangoexample/config/settings.py)
 * [Here - `run.sh`](django/run.sh)
 
-## Foreign Keys
+### Foreign Keys
 
 Many websites have the following kinds of examples:
 
@@ -122,6 +132,26 @@ class Employee(models.Model):
 For example: https://www.freecodecamp.org/news/what-is-one-to-many-relationship-in-django/
 
 But `ForeignKey.to` requires a `str` per: https://docs.djangoproject.com/en/5.0/ref/models/fields/#foreignkey
+
+### JSON Serialization
+
+`HttpRequest` serialization:
+
+```python
+import json
+
+# Serialize and access Body JSON from Django HttpRequest
+json_body = json.loads(request.body)
+```
+
+```python
+from django.http import JsonResponse
+
+# ...
+
+# Automatically serialize response using newerish JsonRespone (no need for json dumps)
+return JsonResponse(...)
+```
 
 ## Endpoints
 
