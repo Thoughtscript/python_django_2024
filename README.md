@@ -23,6 +23,9 @@ Launch:
 
 ```bash
 docker-compose up
+
+# If using Docker Compose Engine V2:
+docker compose up
 ```
 
 > When's all done you should see the default Django view: http://127.0.0.1:8000/
