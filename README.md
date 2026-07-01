@@ -1,6 +1,6 @@
 # python_django_2024
 
-[![](https://img.shields.io/badge/Python-3.12.3-yellow.svg)](https://www.python.org/downloads/) [![](https://img.shields.io/badge/Docker-blue.svg)](https://www.docker.com/) [![](https://img.shields.io/badge/Bitnami-MySQL-red.svg)](https://hub.docker.com/r/bitnami/mysql) [![](https://img.shields.io/badge/Django-5.0.6-green.svg)](https://www.djangoproject.com/) 
+[![](https://img.shields.io/badge/Python-3.12.3-yellow.svg)](https://www.python.org/downloads/) [![](https://img.shields.io/badge/Docker-blue.svg)](https://www.docker.com/) [![](https://img.shields.io/badge/MySQL-8.4.5-blue.svg)](https://dev.mysql.com/doc/refman/8.4/en/preface.html)[![](https://img.shields.io/badge/Django-5.0.6-green.svg)](https://www.djangoproject.com/) 
 
 Revisiting Django in 2024.
 

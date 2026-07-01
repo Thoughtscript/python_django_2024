@@ -1,0 +1,6 @@
+FROM mysql:8.4.5
+
+RUN echo "Creating working dir and copying files"
+RUN mkdir /lab
+WORKDIR /lab
+COPY . .
